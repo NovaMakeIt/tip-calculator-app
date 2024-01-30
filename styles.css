@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+}
+
+body {
+    background-color: hsl(185, 41%, 84%);
+}
+
+.tip-card {
+    width: 920px;
+    height: 480px;
+    padding: 32px;
+    border: 1px solid black;
+}
+
+.content-tip-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tip-information {
+    width: 415px;
+    height: 415px;
+    border: 1px solid black;
+}
+
+.tip-result {
+    width: 415px;
+    height: 415px;
+    border: 1px solid black;
+}
