@@ -17,19 +17,29 @@
   <div class="tip-card">
     <div class="content-tip-card">
       <div class="tip-information">
-        <label for="bill">Bill</label>
-        <input type="number" name="bill" id="bill">
 
-        <label for="select-tip">Select Tip %</label>
-        <input type="button" name="select-tip" id="select-tip" value="5%">
-        <input type="button" name="select-tip" id="select-tip" value="10%">
-        <input type="button" name="select-tip" id="select-tip" value="15%">
-        <input type="button" name="select-tip" id="select-tip" value="25%">
-        <input type="button" name="select-tip" id="select-tip" value="50%">
-        <input type="number" name="select-tip" id="select-tip" placeholder="Custom" min="1" max="100">
+        <div>
+          <label for="bill" class="text-tip-information">Bill</label>
+          <input type="number" name="bill" id="bill" min="1" class="input-information icon-dollar" placeholder="0">
+        </div>
 
-        <label for="people">Number of People</label>
-        <input type="number" name="people" id="people" min="1">
+        <div>
+          <label for="select-tip" class="text-tip-information">Select Tip %</label>
+          <div class="select-tip-button">
+            <input type="button" name="select-tip" id="select-tip" value="5%" class="button-tip">
+            <input type="button" name="select-tip" id="select-tip" value="10%" class="button-tip">
+            <input type="button" name="select-tip" id="select-tip" value="15%" class="button-tip">
+            <input type="button" name="select-tip" id="select-tip" value="25%" class="button-tip">
+            <input type="button" name="select-tip" id="select-tip" value="50%" class="button-tip">
+            <input type="number" name="select-tip" id="select-tip" placeholder="Custom" min="1" max="100" class="button-tip-custom">
+          </div>
+        </div>
+
+        <div>
+          <label for="people" class="text-tip-information">Number of People</label>
+          <input type="number" name="people" id="people" min="1" class="input-information">
+        </div>
+
       </div>
       <div class="tip-result">
         <p>Tip Amount</p>
