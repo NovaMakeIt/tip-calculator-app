@@ -43,22 +43,25 @@ body {
 .input-information {
     width: 380px;
     height: 48px;
-    display: flex;
     border: none;
     background-color: hsl(189, 41%, 97%);
     cursor: pointer;
     outline: none;
     margin-top: 12px;
     padding-left: 15px;
-    padding-right: 15px; 
-}
-
-.input-information::placeholder {
-    padding-left: 15px;
+    padding-right: 15px;
+    text-align: right;
 }
 
 .icon-dollar{
     background-image:url('./images/icon-dollar.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-position-x: 15px;
+}
+
+.icon-person {
+    background-image:url('./images/icon-person.svg');
     background-repeat: no-repeat;
     background-position: left center;
     background-position-x: 15px;
@@ -110,8 +113,53 @@ body {
     border: 1px solid black;
 }
 
+/* ---------------------------------------------------*/
+
 .tip-result {
     width: 415px;
     height: 415px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 62px 42px 40px 42px;
+    background-color: hsl(183, 100%, 15%);
     border: 1px solid black;
+}
+
+.tip-amount, .tip-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tip-amount {
+    margin-bottom: 15px;
+}
+
+.p-tip-result-name {
+    color: hsl(189, 41%, 97%);
+}
+
+.p-tip-result-person {
+    color: hsl(184, 14%, 56%);
+    font-size: 14px;
+}
+
+.p-tip-result {
+    color: hsl(172, 67%, 45%);
+    font-size: 46px;
+}
+
+.button-reset {
+    width: 335px;
+    height: 48px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(187, 38%, 28%);
+}
+
+.button-reset:hover {
+    background-color: hsl(172, 67%, 45%);
 }
