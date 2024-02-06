@@ -85,6 +85,18 @@ selectTipChange.forEach(function(buttonTip) {
             
             tipNumber = this.value;
 
+            // Set the background color of the clicked button
+            buttonTip.style.backgroundColor = 'hsl(172, 67%, 45%)'; // Replace 'your-desired-color' with the color you want
+            buttonTip.style.color = 'hsl(0, 0%, 100%)';
+
+
+            if (selectedButton) {
+                selectedButton.style.backgroundColor = ''; // Set to default or any desired color
+              }
+
+            // Update the selected button
+            selectedButton = buttonTip;
+
             // Check if the input has a value
             if (selectTipChangeCustom.value !== '') {
                 // If input has a value, clear it
