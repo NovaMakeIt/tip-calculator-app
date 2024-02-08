@@ -1,0 +1,5 @@
+@media (max-width: 915px) {
+    .content-tip-card {
+        flex-direction: column;
+    }
+}

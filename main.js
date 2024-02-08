@@ -2,20 +2,18 @@ const billChange = document.getElementById('bill');
 const peopleChange = document.getElementById('people');
 const selectTipChange = document.querySelectorAll('.button-tip');
 const selectTipChangeCustom = document.getElementById('select-tip-custom');
+const resetButton = document.getElementById('button-reset');
 
 const pTipAmountPerson = document.querySelector(`#p-tip-amount-person`);
 const pTipAmountTotal = document.querySelector(`#p-tip-amount-total`);
 
 let tipNumber;
 
-
-
-
 billChange.addEventListener("change", () => {
 
     const billNumber = document.getElementById('bill').value;
 
-    if (billNumber === 0 || billNumber < 0) {
+    if (billNumber === '0' || billNumber < 0) {
 
         billChange.style.outline = 'red solid 2px';
         
@@ -32,7 +30,7 @@ peopleChange.addEventListener("change", () => {
 
     const peopleNumber = document.getElementById('people').value;
 
-    if (peopleNumber === 0 || peopleNumber < 0) {
+    if (peopleNumber === '0' || peopleNumber < 0) {
 
         peopleChange.style.outline = 'red solid 2px';
         
@@ -50,10 +48,13 @@ selectTipChangeCustom.addEventListener("change", () => {
     const tipNumberCustom = document.getElementById('select-tip-custom').value;
 
     if (tipNumber !== '') {
+        selectTipChange.forEach(function (btn) {
+            btn.classList.remove('active');
+          });
         tipNumber = '';
     }
 
-    if (tipNumberCustom === 0 || tipNumberCustom < 0 || tipNumberCustom > 99) {
+    if (tipNumberCustom === '0' || tipNumberCustom < 0 || tipNumberCustom > 99) {
 
         selectTipChangeCustom.style.outline = 'red solid 2px';
         
@@ -66,32 +67,36 @@ selectTipChangeCustom.addEventListener("change", () => {
     calcul();
 });
 
-selectTipChange.forEach(function(buttonTip) {
-    buttonTip.addEventListener('click', function() {
-            
-            tipNumber = this.value;
-
-            /*// Set the background color of the clicked button
-            buttonTip.style.backgroundColor = 'hsl(172, 67%, 45%)'; // Replace 'your-desired-color' with the color you want
-            buttonTip.style.color = 'hsl(183, 100%, 15%)';*/
-
-
-            /*if (selectedButton) {
-                selectedButton.style.backgroundColor = ''; // Set to default or any desired color
-              }
-
-            // Update the selected button
-            selectedButton = buttonTip;*/
-
-            // Check if the input has a value
-            if (selectTipChangeCustom.value !== '') {
-                // If input has a value, clear it
-                selectTipChangeCustom.value = '';
-                
-            }
-
-            calcul();
+selectTipChange.forEach(function (buttonTip) {
+    buttonTip.addEventListener('click', function () {
+      // Remove the 'active' class from all buttons
+      selectTipChange.forEach(function (btn) {
+        btn.classList.remove('active');
+      });
+  
+      // Add the 'active' class to the clicked button
+      this.classList.add('active');
+  
+      tipNumber = this.value;
+  
+      // Check if the input has a value
+      if (selectTipChangeCustom.value !== '') {
+        // If input has a value, clear it
+        selectTipChangeCustom.value = '';
+      }
+  
+      calcul();
     });
+});
+
+resetButton.addEventListener("click", () => {
+    billChange.value = "";
+    peopleChange.value = "";
+    selectTipChange.forEach(function (btn) {
+        btn.classList.remove('active');
+      });
+    tipNumber = "";
+    calcul();
 });
 
 function calcul() {
@@ -150,15 +155,8 @@ function calcul() {
         pTipAmountTotal.innerHTML = HTMLTotalPerson;
     }
 
-
-
     console.log("<------------Résultats finale-------->");
     console.log(tipAmountPerson);
     console.log(totalPerson);
 
-    /*console.log("<---------------Checks les valeurs------------->");
-    console.log("La valeur : ",billNumber);
-    console.log("Nombre de personnes : ",peopleNumber);
-    console.log("Tip % : ",tipNumber);
-    console.log("Tip % Custom : ",tipNumberCustom);*/
 }
