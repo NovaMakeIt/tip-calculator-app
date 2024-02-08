@@ -9,6 +9,91 @@ const pTipAmountTotal = document.querySelector(`#p-tip-amount-total`);
 let tipNumber;
 
 
+
+
+billChange.addEventListener("change", () => {
+
+    const billNumber = document.getElementById('bill').value;
+
+    if (billNumber === 0 || billNumber < 0) {
+
+        billChange.style.outline = 'red solid 2px';
+        
+    } else if (billNumber == '' || billNumber > 0) {
+
+         billChange.style.outline = ''
+
+    }
+
+    calcul();
+});
+
+peopleChange.addEventListener("change", () => {
+
+    const peopleNumber = document.getElementById('people').value;
+
+    if (peopleNumber === 0 || peopleNumber < 0) {
+
+        peopleChange.style.outline = 'red solid 2px';
+        
+    } else if (peopleNumber == '' || peopleNumber > 0) {
+
+        peopleChange.style.outline = ''
+
+    }
+
+    calcul();
+});
+
+selectTipChangeCustom.addEventListener("change", () => {
+
+    const tipNumberCustom = document.getElementById('select-tip-custom').value;
+
+    if (tipNumber !== '') {
+        tipNumber = '';
+    }
+
+    if (tipNumberCustom === 0 || tipNumberCustom < 0 || tipNumberCustom > 99) {
+
+        selectTipChangeCustom.style.outline = 'red solid 2px';
+        
+    } else if (tipNumberCustom == '' || tipNumberCustom > 0) {
+
+        selectTipChangeCustom.style.outline = '';
+
+    }
+
+    calcul();
+});
+
+selectTipChange.forEach(function(buttonTip) {
+    buttonTip.addEventListener('click', function() {
+            
+            tipNumber = this.value;
+
+            /*// Set the background color of the clicked button
+            buttonTip.style.backgroundColor = 'hsl(172, 67%, 45%)'; // Replace 'your-desired-color' with the color you want
+            buttonTip.style.color = 'hsl(183, 100%, 15%)';*/
+
+
+            /*if (selectedButton) {
+                selectedButton.style.backgroundColor = ''; // Set to default or any desired color
+              }
+
+            // Update the selected button
+            selectedButton = buttonTip;*/
+
+            // Check if the input has a value
+            if (selectTipChangeCustom.value !== '') {
+                // If input has a value, clear it
+                selectTipChangeCustom.value = '';
+                
+            }
+
+            calcul();
+    });
+});
+
 function calcul() {
     const billNumber = document.getElementById('bill').value;
     const peopleNumber = document.getElementById('people').value;
@@ -51,6 +136,20 @@ function calcul() {
         pTipAmountTotal.innerHTML = HTMLTotalPerson;
     }
 
+    if (billNumber <= 0 || peopleNumber <= 0 || tipResult <= 0 || tipResult == undefined) {
+
+        const HTMLTipAmountPerson = `
+        $0.00
+        `;
+
+        const HTMLTotalPerson = `
+        $0.00
+        `;
+
+        pTipAmountPerson.innerHTML = HTMLTipAmountPerson;
+        pTipAmountTotal.innerHTML = HTMLTotalPerson;
+    }
+
 
 
     console.log("<------------Résultats finale-------->");
@@ -63,52 +162,3 @@ function calcul() {
     console.log("Tip % : ",tipNumber);
     console.log("Tip % Custom : ",tipNumberCustom);*/
 }
-
-billChange.addEventListener("change", () => {
-    calcul();
-});
-
-peopleChange.addEventListener("change", () => {
-    calcul();
-});
-
-selectTipChangeCustom.addEventListener("change", () => {
-
-    if (tipNumber !== '') {
-        tipNumber = '';
-    }
-    calcul();
-});
-
-selectTipChange.forEach(function(buttonTip) {
-    buttonTip.addEventListener('click', function() {
-            
-            tipNumber = this.value;
-
-            // Set the background color of the clicked button
-            buttonTip.style.backgroundColor = 'hsl(172, 67%, 45%)'; // Replace 'your-desired-color' with the color you want
-            buttonTip.style.color = 'hsl(0, 0%, 100%)';
-
-
-            if (selectedButton) {
-                selectedButton.style.backgroundColor = ''; // Set to default or any desired color
-              }
-
-            // Update the selected button
-            selectedButton = buttonTip;
-
-            // Check if the input has a value
-            if (selectTipChangeCustom.value !== '') {
-                // If input has a value, clear it
-                selectTipChangeCustom.value = '';
-                
-            }
-
-            calcul();
-    });
-});
-
-console.log("----- Test ------");
-        console.log(pTipAmountPerson);
-        console.log(pTipAmountTotal);
-        console.log("----- Fin Test ------");
