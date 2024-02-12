@@ -1,5 +1,35 @@
 @media (max-width: 915px) {
+    .tip-card {
+        max-width: 480px;
+        height: 900px;
+    }
+
+    .select-tip-button {
+        width: 100%;
+    }
+    
     .content-tip-card {
+        width: 100%;
         flex-direction: column;
     }
+
+    .tip-information {
+        width: 100%;
+    }
+
+    .tip-result {
+        width: 100%;
+    }
+
+    .input-information {
+        width: 100%;
+    }
+
+    .button-reset {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+
 }
