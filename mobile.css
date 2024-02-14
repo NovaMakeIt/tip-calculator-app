@@ -1,4 +1,8 @@
 @media (max-width: 915px) {
+    body {
+        height: 100%;
+    }
+
     .tip-card {
         width: 480px;
         height: 850px;
@@ -37,13 +41,14 @@
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 485px) {
     body {
         padding: 5px 0 0 0;
     }
 
     .tip-card {
         height: 100%;
+        width: 100%;
         padding: 25px 30px 25px 30px;
         border-radius: 25px 25px 0 0;
     }

@@ -14,16 +14,16 @@ billChange.addEventListener("change", () => {
     const billNumber = document.getElementById('bill').value;
 
     if (billNumber === '0' || billNumber < 0) {
-
+        
         billChange.style.outline = 'red solid 2px';
+        window.alert("Veuillez mettre une valeur supérieure à 0 !");
         
     } else if (billNumber == '' || billNumber > 0) {
 
          billChange.style.outline = ''
-
+         calcul();
     }
-
-    calcul();
+    
 });
 
 peopleChange.addEventListener("change", () => {
@@ -33,14 +33,16 @@ peopleChange.addEventListener("change", () => {
     if (peopleNumber === '0' || peopleNumber < 0) {
 
         peopleChange.style.outline = 'red solid 2px';
+        window.alert("Veuillez mettre une valeur supérieure à 0 !");
         
     } else if (peopleNumber == '' || peopleNumber > 0) {
 
         peopleChange.style.outline = ''
+        calcul();
 
     }
 
-    calcul();
+    
 });
 
 selectTipChangeCustom.addEventListener("change", () => {
@@ -54,17 +56,23 @@ selectTipChangeCustom.addEventListener("change", () => {
         tipNumber = '';
     }
 
-    if (tipNumberCustom === '0' || tipNumberCustom < 0 || tipNumberCustom > 99) {
+    if (tipNumberCustom === '0' || tipNumberCustom < 0) {
 
         selectTipChangeCustom.style.outline = 'red solid 2px';
+        window.alert("Veuillez mettre une valeur supérieure à 0 !");
         
+    } else if (tipNumberCustom > 99) {
+
+        selectTipChangeCustom.style.outline = 'red solid 2px';
+        window.alert("Veuillez mettre une valeur inférieur à 99 !");
+
     } else if (tipNumberCustom == '' || tipNumberCustom > 0) {
 
         selectTipChangeCustom.style.outline = '';
-
+        calcul();
     }
 
-    calcul();
+    
 });
 
 selectTipChange.forEach(function (buttonTip) {
@@ -96,6 +104,7 @@ resetButton.addEventListener("click", () => {
         btn.classList.remove('active');
       });
     tipNumber = "";
+    selectTipChangeCustom.value = "";
     calcul();
 });
 

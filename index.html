@@ -15,53 +15,55 @@
 
 </head>
 <body>
-  <img src="./images/logo.svg" />
-  <div class="tip-card">
-    <div class="content-tip-card">
-      <div class="tip-information">
+  <div class="card-all">
+    <img class="img-all" src="./images/logo.svg" />
+    <div class="tip-card">
+      <div class="content-tip-card">
+        <div class="tip-information">
 
-        <div>
-          <label for="bill" class="text-tip-information">Bill</label>
-          <input type="number" name="bill" id="bill" min="1" class="input-information icon-dollar" placeholder="0">
-        </div>
-
-        <div>
-          <label for="select-tip" class="text-tip-information">Select Tip %</label>
-          <div class="select-tip-button">
-            <button name="select-tip" id="select-tip" value="05" class="button-tip">5%</button>
-            <button name="select-tip" id="select-tip" value="1" class="button-tip">10%</button>
-            <button name="select-tip" id="select-tip" value="15" class="button-tip">15%</button>
-            <button name="select-tip" id="select-tip" value="25" class="button-tip">25%</button>
-            <button name="select-tip" id="select-tip" value="5" class="button-tip">50%</button>
-            <input type="number" name="select-tip" id="select-tip-custom" placeholder="Custom" min="1" max="100" class="button-tip-custom">
+          <div>
+            <label for="bill" class="text-tip-information">Bill</label>
+            <input type="number" name="bill" id="bill" min="1" class="input-information icon-dollar" placeholder="0">
           </div>
-        </div>
 
-        <div>
-          <label for="people" class="text-tip-information">Number of People</label>
-          <input type="number" name="people" id="people" min="1" class="input-information icon-person" placeholder="0">
-        </div>
-
-      </div>
-      <div class="tip-result">
-        <div>
-          <div class="tip-amount">
-            <div>
-              <p class="p-tip-result-name">Tip Amount</p>
-              <p class="p-tip-result-person">/ person</p>
+          <div>
+            <label for="select-tip" class="text-tip-information">Select Tip %</label>
+            <div class="select-tip-button">
+              <button name="select-tip" id="select-tip" value="05" class="button-tip">5%</button>
+              <button name="select-tip" id="select-tip" value="1" class="button-tip">10%</button>
+              <button name="select-tip" id="select-tip" value="15" class="button-tip">15%</button>
+              <button name="select-tip" id="select-tip" value="25" class="button-tip">25%</button>
+              <button name="select-tip" id="select-tip" value="5" class="button-tip">50%</button>
+              <input type="number" name="select-tip" id="select-tip-custom" placeholder="Custom" min="1" max="100" class="button-tip-custom">
             </div>
-              <p class="p-tip-amount-person" id="p-tip-amount-person">$0.00</p>
           </div>
-          <div class="tip-total">
-            <div>
-              <p class="p-tip-result-name">Total</p>
-              <p class="p-tip-result-person">/ person</p>
-            </div>
-              <p class="p-tip-amount-total" id="p-tip-amount-total">$0.00</p>
-          </div>
-        </div>
 
-        <button class="button-reset" id="button-reset">RESET</button>
+          <div>
+            <label for="people" class="text-tip-information">Number of People</label>
+            <input type="number" name="people" id="people" min="1" class="input-information icon-person" placeholder="0">
+          </div>
+
+        </div>
+        <div class="tip-result">
+          <div>
+            <div class="tip-amount">
+              <div>
+                <p class="p-tip-result-name">Tip Amount</p>
+                <p class="p-tip-result-person">/ person</p>
+              </div>
+                <p class="p-tip-amount-person" id="p-tip-amount-person">$0.00</p>
+            </div>
+            <div class="tip-total">
+              <div>
+                <p class="p-tip-result-name">Total</p>
+                <p class="p-tip-result-person">/ person</p>
+              </div>
+                <p class="p-tip-amount-total" id="p-tip-amount-total">$0.00</p>
+            </div>
+          </div>
+
+          <button class="button-reset" id="button-reset">RESET</button>
+        </div>
       </div>
     </div>
   </div>
