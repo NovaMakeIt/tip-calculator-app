@@ -21,8 +21,10 @@ billChange.addEventListener("change", () => {
     } else if (billNumber == '' || billNumber > 0) {
 
          billChange.style.outline = ''
-         calcul();
+         
     }
+
+    calcul();
     
 });
 
@@ -38,10 +40,11 @@ peopleChange.addEventListener("change", () => {
     } else if (peopleNumber == '' || peopleNumber > 0) {
 
         peopleChange.style.outline = ''
-        calcul();
+        
 
     }
 
+    calcul();
     
 });
 
@@ -69,9 +72,10 @@ selectTipChangeCustom.addEventListener("change", () => {
     } else if (tipNumberCustom == '' || tipNumberCustom > 0) {
 
         selectTipChangeCustom.style.outline = '';
-        calcul();
+        
     }
 
+    calcul();
     
 });
 
