@@ -54,3 +54,14 @@
     }
 
 }
+
+@media (max-width: 375px) {
+    .p-tip-amount-person {
+        font-size: 40px;
+    }
+    
+    .p-tip-amount-total {
+        font-size: 40px;
+    }
+
+}
