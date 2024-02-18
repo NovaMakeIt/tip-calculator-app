@@ -109,6 +109,9 @@ resetButton.addEventListener("click", () => {
       });
     tipNumber = "";
     selectTipChangeCustom.value = "";
+    billChange.style.outline = '';
+    peopleChange.style.outline = '';
+    selectTipChangeCustom.style.outline = '';
     calcul();
 });
 
